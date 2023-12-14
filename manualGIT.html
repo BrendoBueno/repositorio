@@ -20,7 +20,7 @@
         function runCommand() {
             var inputElement = document.getElementById('input');
             var outputElement = document.getElementById('output');
-            var command = inputElement.value.toLowerCase(); // Convertendo para minúsculas para facilitar a comparação
+            var command = inputElement.value.toLowerCase();
 
             // Simulação simples de execução de comandos
             var output;
@@ -35,17 +35,22 @@
                 case 'date':
                     output = new Date().toLocaleString();
                     break;
+                case 'whoami':
+                    output = 'usuario';
+                    break;
+                case 'clear':
+                    output = '';
+                    break;
+                case 'help':
+                    output = 'Comandos disponíveis: ls, pwd, date, whoami, clear, help';
+                    break;
                 default:
-                    output = 'Comando não reconhecido. Tente ls, pwd, date, etc.';
+                    output = 'Comando não reconhecido. Tente help para ver os comandos disponíveis.';
             }
 
-            // Exibir resultado na área de saída
             outputElement.innerHTML = 'Comando: ' + command + '<br>Resultado: ' + output;
-
-            // Limpar o campo de entrada
             inputElement.value = '';
         }
     </script>
-
 </body>
 </html>
