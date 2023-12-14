@@ -3,45 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Terminal Tutorial</title>
 </head>
 <body>
-   <h1>cods</h1>
-   <ul>
-    <li>
-        ls lisda 
-    </li>
-    <li>
-         pwd mostra em que tiretorio voce esta ou pasta 
-    </li>
-    <li>
-        cd troca de repocitorio
-        cd ../ para tras
-        cd .\ entra
-    </li>
-    <li>
-        git init
-       para inicia o repositorio
-    </li>
-    <li>
-        ls -la 
-        mostra os paramitros 
-    </li>
-    <li> 
-     git add
-            fazer ser rastreavel oi
-    </li>
-    <li>
-        teste 2
 
-    </li>
-   </ul>
-    
-   
-   
-    
-    
-  
+    <div id="terminal">
+        <div id="output">Bem-vindo ao Tutorial do Terminal!</div>
+        <div id="input-container">
+            <input type="text" id="input" placeholder="Digite um comando">
+            <button id="run-button" onclick="runCommand()">Executar</button>
+        </div>
+    </div>
+
+    <script>
+        function runCommand() {
+            var inputElement = document.getElementById('input');
+            var outputElement = document.getElementById('output');
+            var command = inputElement.value;
+
+            // Simulação simples de execução de comando
+            var output = 'Comando: ' + command + '<br>Resultado: Comando executado com sucesso!';
+            outputElement.innerHTML = output;
+
+            // Limpar o campo de entrada
+            inputElement.value = '';
+        }
+    </script>
+
 </body>
 </html>
-
